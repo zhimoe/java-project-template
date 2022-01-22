@@ -1,0 +1,26 @@
+target/
+# macos
+.DS_Store
+
+# intellij idea
+out/
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+
+# eclipse
+.settings/
+.metadata
+.classpath
+.project
+*.tmp
+
+# vs code
+.vscode/
+.code-workspace
+
+
+
+
