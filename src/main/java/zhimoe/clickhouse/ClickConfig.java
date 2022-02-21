@@ -2,6 +2,7 @@ package zhimoe.clickhouse;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @since 2022/2/5
  */
 @Data
-@Service
+@Component
 public class ClickConfig {
 
 	@Value("${spring.datasource.url}")
@@ -26,5 +27,8 @@ public class ClickConfig {
 
 	@Value("${spring.datasource.connectionTimeout}")
 	private Integer connectionTimeout;
+
+	@Value("${spring.datasource.driver-class-name}")
+	private String driverClassName;
 
 }

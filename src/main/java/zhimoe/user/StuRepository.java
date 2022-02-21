@@ -17,17 +17,18 @@ import java.util.List;
 @Repository
 public class StuRepository {
 
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
-	public List<Student> getAllStudents() {
-		return jdbcTemplate.query("select * from stu order by create_time asc limit 10", (ResultSet rs, int rowNum) -> {
-			Student stu = new Student();
-			stu.setId(rs.getLong("id"));
-			stu.setName(rs.getString("name"));
-			stu.setCreateTime(rs.getString("create_time"));
-			return stu;
-		});
-	}
+    public List<Student> getAllStudents() {
+        return jdbcTemplate.query("select * from stu order by create_time asc limit 10",
+                (ResultSet rs, int rowNum) -> {
+                    Student stu = new Student();
+                    stu.setId(rs.getLong("id"));
+                    stu.setName(rs.getString("name"));
+                    stu.setCreateTime(rs.getString("create_time"));
+                    return stu;
+                });
+    }
 
 }
